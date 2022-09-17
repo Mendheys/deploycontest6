@@ -1,0 +1,30 @@
+#Yname{
+    display: flex;
+    gap: 20px;
+}
+#container{
+    
+    margin: auto;
+    margin-top: 30px;
+    width: 90%;
+
+    display: grid;;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px
+}
+#divOne{
+    border: 1px solid grey;
+    padding: 10px;
+}
+#divOne >img{
+    width: 200px;
+}
+#navbar{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin: auto;
+    border: 1px solid black;
+    height: 40px;
+}
+

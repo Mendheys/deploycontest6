@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>EDIT YOUR PRICE</H1>
+    <input type="number" id="edit">
+    <button id="editBtn">EDIT</button>
+</body>
+</html>
+<script >
+    let id = JSON.parse(localStorage.getItem("itemID"))
+    
+    let url = `https://glacial-bastion-32625.herokuapp.com/cars/${id}`
+
+    let editBtn = document.getElementById("editBtn")
+    
+    
+    
+    
+    editBtn.addEventListener("click", () => {
+        let edit = document.getElementById("edit");
+    
+        let payload = {
+            Price : edit.value
+    }
+    fetch(url,{
+        method : "PATCH",
+        body : JSON.stringify(payload),
+        headers : {"content-type" : "application/json"}
+    }).then((res) => console.log(res)).then(alert("successfully price edited")).catch((err) => console.log(err))
+
+    window.location.href = 'car.html'
+    
+        // console.log(id)
+    })
+    </script>
